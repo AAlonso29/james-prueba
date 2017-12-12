@@ -1,0 +1,32 @@
+<form class="form-auth">  
+    <h2 class="form-auth-heading">Signup</h2>
+
+    <div class="alert alert-danger" ng-if="sc.signupError" role="alert">{{ sc.signupErrorMessage }}</div>
+    <div class="alert alert-success" ng-if="sc.signupSuccess" role="alert">Account created! You can <a ui-sref="login">login</a> now!</div>
+
+    <label for="inputnombreUsuario" class="sr-only">Nombre</label>
+    <input type="text" id="inputnombreUsuario" ng-model="sc.nombreUsuario" class="form-control" placeholder="Nombre" required autofocus>
+
+    <label for="inputapellidoUsuario" class="sr-only">Apellido</label>
+    <input type="text" id="inputapellidoUsuario" ng-model="sc.apellidoUsuario" class="form-control" placeholder="Apellido" required>
+
+    <label for="inputemailUsuario" class="sr-only">Email</label>
+    <input type="email" id="inputemailUsuario" ng-model="sc.emailUsuario" class="form-control" placeholder="nombre.apellido@brechadigital.cl" required>
+
+
+    <label for="inputavatarUsuario" class="sr-only">Avatar</label>
+    <input type="text" id="inputavatarUsuario" ng-model="sc.avatarUsuario" class="form-control" placeholder="imagen">
+
+    <label for="inputPassword" class="sr-only">Password</label>
+    <input type="password" id="inputPassword" ng-model="sc.password" class="form-control" placeholder="Password" required>
+
+
+    <label for="inputtelefonoMovil" class="sr-only">Telefono movil</label>
+    <input type="number" id="inputtelefonoMovil" ng-model="sc.telefonoMovil" class="form-control" placeholder="56987653214">
+
+    <label for="inputtelefonoFijo" class="sr-only">Telefono fijo</label>
+    <input type="number" id="inputtelefonoFijo" ng-model="sc.telefonoFijo" class="form-control" placeholder="(2)26534505">
+
+
+    <button class="btn btn-lg btn-primary btn-block" type="submit" ng-click="sc.signup()">Signup</button>
+</form>

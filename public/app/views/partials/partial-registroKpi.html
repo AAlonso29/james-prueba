@@ -1,0 +1,162 @@
+<form class="form-auth">  
+
+        <div class = "form-group text-center">
+                <label>Seleccione tipo de cuenta:</label>
+                <br>
+                <br>
+
+                <div class = "radio-inline">
+                    <label for ="seleccionRd"><input checked id="seleccionRd" name= "seleccionRd" type="radio" ng-model= "seleccionRd" value="facebook" ><img src="/imagen/fb.png" alt="Facebook" height="42" width="42"></label>
+                </div>
+                <div class = "radio-inline">
+                    <label for= "seleccionRd"><input id="seleccionRd" name= "seleccionRd" type="radio" ng-model= "seleccionRd" value="twitter" ><img src="/imagen/tw.png" alt="Twitter" height="42" width="42"></label>
+                </div>
+                <div class = "radio-inline">
+                        <label for= "seleccionRd"><input id="seleccionRd" name= "seleccionRd" type="radio" ng-model= "seleccionRd" value="web" ><img src="/imagen/ht.png" alt="Web" height="42" width="42"></label>
+                    </div>
+                    
+             
+            </div>
+            <div ng-show="seleccionRd==='facebook'" class = "form-group" id="facebook">
+                    <form  name="formFacebook">
+                            <h2 class="form-auth-heading">Registro Kpi Facebook</h2>
+                            <br>
+                            <div class="alert alert-danger" ng-if="gc.general_kpiError" role="alert">{{ gc.general_kpiErrorMessage }}</div>
+                            <div class="alert alert-success" ng-if="gc.general_kpiSuccess" role="alert">KPI guardado!</div>
+                            <br>
+                            
+                            <label for="fechaInicio">Fecha ingreso:</label>
+                            <div class='input-group date' id='datepicker'>
+                                <input  type='date' ng-value="{{fechaInicial| date:'yyyy/MM/dd'}}" date-parser="yyyy/MM/dd" ng-model="gc.fechaInicio" requred  class="form-control" id="fechaInicio">
+                                <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-calendar">
+                                    </span>
+                                </span>
+                            </div>
+                                <br>
+                                <label for="fechaFinal">Fecha termino:</label>
+                                <div class='input-group date' id='datepicker'>
+                                    <input type='date' ng-value="{{fechaFinal| date:'yyyy/MM/dd'}}" date-parser="yyyy/MM/dd" ng-model="gc.fechaFinal" requred  class="form-control" id="fechaFinal">
+                                    <span class="input-group-addon">
+                                        <span class="glyphicon glyphicon-calendar">
+                                        </span>
+                                    </span>
+                                </div>
+                                <br>
+    
+                            <label for="inputfans" class="sr-only">Fans</label>
+                            <input type="number" id="inputfans" ng-model="gc.fans" class="form-control" placeholder="numero de fans" >
+                            <br>
+                            <label for="inputalcance" class="sr-only">Alcance</label>
+                            <input type="number" id="inputalcance" ng-model="gc.alcance" class="form-control" placeholder="numero de alcance" >
+                            <br>       
+                            <label for="inputimpresiones" class="sr-only">Impresiones</label>
+                            <input type="number" id="inputimpresiones" ng-model="gc.impresiones" class="form-control" placeholder="numero de impresiones" >
+                            <br>
+                            <label for="inputinteracciones" class="sr-only">Interacciones</label>
+                            <input type="number" id="inputinteracciones" ng-model="gc.interacciones" class="form-control" placeholder="numero de interacciones" >
+                            <br>
+                            <label for="inputpublicaciones" class="sr-only">Publicaciones</label>
+                            <input type="number" id="inputpublicaciones" ng-model="gc.publicaciones" class="form-control" placeholder="numero de publicaciones" >
+                            <br>
+                        </form>
+                        <div id= "buttons">
+                            <button class="btn btn-lg btn-primary btn-block" type="submit" ng-click="gc.general_kpi()">Guardar</button>
+                        </div>
+            </div>
+
+            <div ng-show="seleccionRd==='twitter'" class = "form-group" id="twitter">
+                    <form  name="formTwitter">
+                            <h2 class="form-auth-heading">Registro Kpi Twitter</h2>
+                            <br>
+                            <div class="alert alert-danger" ng-if="gc.general_kpiError" role="alert">{{ gc.general_kpiErrorMessage }}</div>
+                            <div class="alert alert-success" ng-if="gc.general_kpiSuccess" role="alert">KPI guardado!</div>
+                            <br>
+                            <label for="fechaInicio">Fecha ingreso:</label>
+                            <div class='input-group date' id='datepicker'>
+                                <input  type='date' ng-value="{{fechaInicial| date:'yyyy/MM/dd'}}" date-parser="yyyy/MM/dd" ng-model="gc.fechaInicio" requred  class="form-control" id="fechaInicio">
+                                <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-calendar">
+                                    </span>
+                                </span>
+                            </div>
+                                <br>
+                                <label for="fechaFinal">Fecha termino:</label>
+                                <div class='input-group date' id='datepicker'>
+                                    <input type='date' ng-value="{{fechaFinal| date:'yyyy/MM/dd'}}" date-parser="yyyy/MM/dd" ng-model="gc.fechaFinal" requred  class="form-control" id="fechaFinal">
+                                    <span class="input-group-addon">
+                                        <span class="glyphicon glyphicon-calendar">
+                                        </span>
+                                    </span>
+                                </div>
+                                <br>
+                            <label for="inputfollowers" class="sr-only">Followers</label>
+                            <input type="number" id="inputfollowers" ng-model="gc.followers" class="form-control" placeholder="numero de followers" >
+                            <br>
+                            <label for="inputreach" class="sr-only">Reach</label>
+                            <input type="number" id="inputreach" ng-model="gc.reach" class="form-control" placeholder="numero de reach" >
+                            <br>
+                            <label for="inputimpressions" class="sr-only">Impressions</label>
+                            <input type="number" id="inputimpressions" ng-model="gc.impressions" class="form-control" placeholder="numero de impressions" >
+                            <br>
+                            <label for="inputcontribuidores" class="sr-only">Contribuidores</label>
+                            <input type="number" id="inputcontribuidores" ng-model="gc.contribuidores" class="form-control" placeholder="numero de contribuidores" >
+                            <br>
+                            <label for="inputtwettGenerados" class="sr-only">Twett generados</label>
+                            <input type="number" id="inputtwettGenerados" ng-model="gc.twettGenerados" class="form-control" placeholder="numero de twett generados" >
+                            <br>
+                            <label for="inputretweets" class="sr-only">Retweets</label>
+                            <input type="number" id="inputretweets" ng-model="gc.retweets" class="form-control" placeholder="numero de retweets" >
+                            <br>
+                            <label for="inputrespuestas" class="sr-only">Respuestas</label>     
+                            <input type="number" id="inputrespuestas" ng-model="gc.respuestas" class="form-control" placeholder="numero de respuestas" >
+                            <br>
+                            <label for="inputmenciones" class="sr-only">Menciones</label>
+                            <input type="number" id="inputmenciones" ng-model="gc.menciones" class="form-control" placeholder="numero de menciones" >
+                            <br>
+                        </form>
+                        <div id= "buttons">
+                            <button class="btn btn-lg btn-primary btn-block" type="submit" ng-click="gc.general_kpi()">Guardar</button>
+                        </div>
+            </div>
+
+            <div ng-show="seleccionRd==='web'" class = "form-group" id="web">
+                    <form  name="formWeb">
+                            <h2 class="form-auth-heading">Registro Kpi Web</h2>
+                            <br>
+                            <div class="alert alert-danger" ng-if="gc.general_kpiError" role="alert">{{ gc.general_kpiErrorMessage }}</div>
+                            <div class="alert alert-success" ng-if="gc.general_kpiSuccess" role="alert">KPI guardado!</div>
+                            <br>
+                                                        <label for="fechaInicio">Fecha ingreso:</label>
+                            <div class='input-group date' id='datepicker'>
+                                <input  type='date' ng-value="{{fechaInicial| date:'yyyy/MM/dd'}}" date-parser="yyyy/MM/dd" ng-model="gc.fechaInicio" requred  class="form-control" id="fechaInicio">
+                                <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-calendar">
+                                    </span>
+                                </span>
+                            </div>
+                                <br>
+                                <label for="fechaFinal">Fecha termino:</label>
+                                <div class='input-group date' id='datepicker'>
+                                    <input type='date' ng-value="{{fechaFinal| date:'yyyy/MM/dd'}}" date-parser="yyyy/MM/dd" ng-model="gc.fechaFinal" requred  class="form-control" id="fechaFinal">
+                                    <span class="input-group-addon">
+                                        <span class="glyphicon glyphicon-calendar">
+                                        </span>
+                                    </span>
+                                </div>
+                                <br>
+                            <label for="inputvisitas" class="sr-only">Visitas</label>
+                            <input type="number" id="inputvisitas" ng-model="gc.visitas" class="form-control" placeholder="numero de visitas" >
+                            <br>
+                            <label for="inputrebote" class="sr-only">Rebote</label>
+                            <input type="number" id="inputebote" ng-model="gc.rebote" class="form-control" placeholder="numero de rebote" >
+                            <br>
+                            <label for="inputpermanencia" class="sr-only">Permanencia</label>
+                            <input type="number" id="inputpermanencia" ng-model="gc.permanencia" class="form-control" placeholder="numero de permanencia" >
+                            <br>
+                        </form>
+                        <div id= "buttons">
+                            <button class="btn btn-lg btn-primary btn-block" type="submit" ng-click="gc.general_kpi()">Guardar</button>
+                        </div>
+            </div>
+    </form>

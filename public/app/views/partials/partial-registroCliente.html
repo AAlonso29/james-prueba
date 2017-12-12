@@ -1,0 +1,29 @@
+<form class="form-auth">  
+    <h2 class="form-auth-heading">Registro cliente</h2>
+
+    <div class="alert alert-danger" ng-if="cc.usr_clienteError" role="alert">{{ cc.usr_clienteErrorMessage }}</div>
+    <div class="alert alert-success" ng-if="cc.usr_clienteSuccess" role="alert">Cliente guardado!</div>
+
+    <label for="inputnombreCliente" class="sr-only">Nombre cliente</label>
+    <input type="text" id="inputnombreCliente" ng-model="cc.nombreCliente" class="form-control" placeholder="Nombre cliente" required autofocus>
+
+    <label for="inputapellidoPCliente" class="sr-only">Apellido paterno cliente</label>
+    <input type="text" id="inputapellidoPCliente" ng-model="cc.apellidoPCliente" class="form-control" placeholder="Apellido paterno cliente" required autofocus>
+
+    <label for="inputapellidoMCliente" class="sr-only">Apellido materno cliente</label>
+    <input type="text" id="inputapellidoMCliente" ng-model="cc.apellidoMCliente" class="form-control" placeholder="Apellido materno cliente" required autofocus>
+
+    <label for="inputemailCliente" class="sr-only">Email</label>
+    <input type="email" id="inputemailCliente" ng-model="cc.emailCliente" class="form-control" placeholder="nombre.apellido@yopmail.com" required autofocus>
+
+    <label for="inputtelefonoFijoCliente" class="sr-only">Telefono fijo</label>
+    <input type="text" id="inputtelefonoFijoCliente" ng-model="cc.telefonoFijoCliente" class="form-control" placeholder="(2)26234505" required autofocus>
+
+    <label for="inputtelefonoMovilCliente" class="sr-only">Telefono movil</label>
+    <input type="text" id="inputtelefonoMovilCliente" ng-model="cc.telefonoMovilCliente" class="form-control" placeholder="56987946513" required autofocus>
+
+    <label for="inputpassword" class="sr-only">Contraseña</label>
+    <input type="password" id="inputpassword" ng-model="cc.password" class="form-control" placeholder="************" required autofocus>
+
+    <button class="btn btn-lg btn-primary btn-block" type="submit" ng-click="cc.usr_cliente()">Guardar</button>
+</form>

@@ -1,0 +1,15 @@
+<!-- PASO 6: Se procede a crear la capa de presentacion, la cual sera de yan ayuda para interactuar con el usuarioy desplegar la logica del sistema-->
+
+<form class="form-auth">  
+    <h2 class="form-auth-heading">Registro empresa</h2>
+
+    <div class="alert alert-danger" ng-if="ec.empresaError" role="alert">{{ ec.empresaErrorMessage }}</div>
+    <div class="alert alert-success" ng-if="ec.empresaSuccess" role="alert">Empresa guardada!</div>
+
+    <label for="inputnombreEmpresa" class="sr-only">Nombre Empresa</label>
+    <input type="text" id="inputnombreEmpresa" ng-model="ec.nombreEmpresa" class="form-control" placeholder="Nombre empresa" required autofocus>
+
+    <button class="btn btn-lg btn-primary btn-block" type="submit" ng-click="ec.empresa()">Guardar</button>
+</form>
+
+<!-- Posterior a la creacion de la capa de presentacion se procede a enrrurar el sistema con ella, lo cual realizamos en el apartado app.js -->
