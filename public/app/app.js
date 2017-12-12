@@ -97,7 +97,7 @@
             templateUrl: 'app/views/partials/partial-admin.html',         
             controller: 'AdminController as ac',
             data: {
-                accessLevel: staticData.accessLevels.admin
+                accessLevel: staticData.accessLevels.guest
                 
                
             }

@@ -4,6 +4,7 @@
 'use strict';
 
 var router = require('express').Router();
+var User = require('../models/user');
 
 var config = require('../config'),
     allowOnly = require('../services/routesHelper').allowOnly,
@@ -23,8 +24,26 @@ var APIRoutes = function(passport) {
     // GET Routes.
     router.get('/profile', passport.authenticate('jwt', { session: false }), allowOnly(config.accessLevels.user, UserController.index));
     
-    router.get('/admin', passport.authenticate('jwt', { session: false }), allowOnly(config.accessLevels.admin, AdminController.index));
+    router.get('/admin', passport.authenticate('jwt', { session: false }), allowOnly(config.accessLevels.guest, AdminController.index));
+
+    router.get('/signup', AuthController.getUser);
  
+    // router.get('/signup', function (request, response) {
+        
+    //         console.log('GET /signup');
+        
+    //         User.find(function (error, signup) {
+        
+    //           if (error) {
+    //             response.status(500).send(error);
+    //             return;
+    //           }
+        
+    //           console.log(users);
+        
+    //           response.json(signup);
+    //         });
+    //       });
 
     return router;
 };

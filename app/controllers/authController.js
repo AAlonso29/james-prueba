@@ -5,12 +5,15 @@
 
 var jwt = require('jsonwebtoken');
 
+var Sequelize = require('sequelize');
+
 var config = require('../config'),
     db = require('../services/database'),
     User = require('../models/user'),
     Empresa = require('../models/empresa'),
     usr_Cliente = require('../models/usr_cliente'),
     General_kpi = require('../models/general_kpi');
+ var sequelize = new Sequelize(config.db.name, config.db.user, '1234');
 
 // The authentication controller.
 var AuthController = {};
@@ -40,6 +43,14 @@ AuthController.signUp = function(req, res) {
         });
 
     }
+}
+
+AuthController.getUser = function(req, res){
+    sequelize.query("SELECT * FROM 'users'", { type: sequelize.QueryTypes.SELECT})
+    .then(function(users) {
+        res.json(users);
+      // We don't need spread here, since only the results will be returned for select queries
+    });
 }
 
 //Registro empresa

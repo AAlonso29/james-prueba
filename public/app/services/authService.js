@@ -97,6 +97,20 @@
             return $http(reqObj);
         }
 
+        
+
+        // function signup(nombreUsuario, apellidoUsuario, emailUsuario, avatarUsuario, password, telefonoMovil, telefonoFijo) {
+        //     console.log('hola');
+        //     var reqObj = {
+        //         method: 'GET',
+        //         url: '/api/signup',
+               
+        //     };
+
+        //     return $http(reqObj);
+        // }
+
+
         function empresa(nombreEmpresa){
             var reqObj = {
                 method: 'POST',

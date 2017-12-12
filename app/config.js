@@ -5,7 +5,7 @@ var config = module.exports;
 
 config.db = {
     user: 'root', 
-    password: '',
+    password: '1234',
     name: 'james_auth'
 };
 
@@ -29,6 +29,8 @@ var userRoles = config.userRoles = {
     // cliente:4,
     // other:5
 };
+
+
 
 config.accessLevels = {
     guest: userRoles.guest | userRoles.user | userRoles.admin,    // ...111
