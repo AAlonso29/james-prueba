@@ -97,9 +97,18 @@
             templateUrl: 'app/views/partials/partial-admin.html',         
             controller: 'AdminController as ac',
             data: {
-                accessLevel: staticData.accessLevels.guest
+                accessLevel: staticData.accessLevels.admin
                 
                
+            }
+        });
+
+        $stateProvider.state('empres', {
+            url: '/empres',
+            templateUrl: 'app/views/partials/partial-empres.html',         
+            controller: 'EmpresController as ec',
+            data: {
+                accessLevel: staticData.accessLevels.admin
             }
         });
         
