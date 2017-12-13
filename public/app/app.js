@@ -102,15 +102,6 @@
                
             }
         });
-
-        $stateProvider.state('empres', {
-            url: '/empres',
-            templateUrl: 'app/views/partials/partial-empres.html',         
-            controller: 'EmpresController as ec',
-            data: {
-                accessLevel: staticData.accessLevels.admin
-            }
-        });
         
         // Signup route.
         $stateProvider.state('signup', {

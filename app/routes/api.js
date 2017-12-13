@@ -10,8 +10,7 @@ var config = require('../config'),
     allowOnly = require('../services/routesHelper').allowOnly,
     AuthController = require('../controllers/authController'),
     UserController = require('../controllers/userController'),
-    AdminController = require('../controllers/adminController'),
-    EmpresController = require('../controllers/empresController');
+    AdminController = require('../controllers/adminController');
 
 
 var APIRoutes = function(passport) {
@@ -26,9 +25,6 @@ var APIRoutes = function(passport) {
     router.get('/profile', passport.authenticate('jwt', { session: false }), allowOnly(config.accessLevels.user, UserController.index));
     
     router.get('/admin', passport.authenticate('jwt', { session: false }), allowOnly(config.accessLevels.admin, AdminController.index));
-
-    router.get('/empres', EmpresController.index);
-
 
     return router;
 };
