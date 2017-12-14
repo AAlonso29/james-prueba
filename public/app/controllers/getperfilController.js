@@ -3,22 +3,23 @@
 
     angular
         .module('jamesAuth')
-        .controller('ProfileController', [
+        .controller('AuthController', [
             '$http',
-            profileController
+            getperfilController
         ]);
 
-    function profileController($http) {
+    function getperfilController($http) {
         var vm = this;
 
         vm.message = '';
+   
 
-        $http({ method: 'GET', url: '/api/profile' })
+        $http({ method: 'GET', url: '/api/getperfil' })
             .then(function(response) {
                 if(response && response.data) {
                     vm.message = response.data.message;
+
                 }
             });
     }
-
 })();

@@ -1,3 +1,5 @@
+
+
 // PASO 2: Teniedo ya creado el model, se procede a configurar la creacion de la nueva tabla eb BDD; para ello, se crean una sincronizacion con
 // base de datos (MYsql) y se le pasan los parametros contenidos en el models.
 
@@ -63,6 +65,16 @@ AuthController.empresa = function(req, res) {
             res.status(403).json({ message: 'La empresa ya existe!' });
         });
    }
+}
+
+AuthController.GetPerfil= function(req, res){
+    var datosE = '';
+    db.sync().then(function(){
+        Empresa.findAll({raw: true}).then(function(empresas){
+            this.datosE = empresas;
+        });
+    });
+    return datosE;
 }
 
 //Registro de clientes

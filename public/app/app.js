@@ -107,7 +107,7 @@
         $stateProvider.state('signup', {
             url: '/signup',
             templateUrl: 'app/views/partials/partial-signup.html',
-            controller: 'SignupController as sc',
+            controller: 'SignupController as sc'
            
         });
 
@@ -139,6 +139,12 @@
                 accessLevel: staticData.accessLevels.user 
             }
         }); 
+
+        $stateProvider.state('getperfil',{
+            url: '/getperfil',
+            templateUrl: 'app/views/partials/partial-getperfil.html',
+            controller: 'getperfilController as gp'
+        });
 
         $locationProvider.html5Mode(true);
         $httpProvider.interceptors.push('requestInterceptor');

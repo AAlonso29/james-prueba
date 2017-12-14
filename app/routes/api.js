@@ -26,6 +26,8 @@ var APIRoutes = function(passport) {
     
     router.get('/admin', passport.authenticate('jwt', { session: false }), allowOnly(config.accessLevels.admin, AdminController.index));
 
+    router.get('/getperfil', AuthController.GetPerfil);
+
     return router;
 };
 
